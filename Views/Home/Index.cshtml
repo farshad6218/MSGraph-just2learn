@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://developer.microsoft.com/en-us/graph/graph-explorer">building Web apps with ASP.NET Core and Microsoft Graph</a>.</p>
+</div>
+
+<div>API result</div>
+<div>@ViewData["ApiResult"]</div>
+
+<div>Graph API result</div>
+<div>@ViewData["GraphApiResult"]</div>
+
+
+
+<form method="post" action="/Home/AddMeetingToCalendar">
+    <label for="subject">Subject:</label>
+    <input type="text" name="subject" required /><br />
+
+    <label for="startDateTime">Start Date and Time:</label>
+    <input type="datetime-local" name="startDateTime" required /><br />
+
+    <label for="endDateTime">End Date and Time:</label>
+    <input type="datetime-local" name="endDateTime" required /><br />
+
+    <input type="submit" value="Add Meeting" />
+</form>
